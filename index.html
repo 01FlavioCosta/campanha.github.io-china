@@ -77,46 +77,27 @@
     .cta-button:hover {
       background: #c2102a;
     }
-    form {
+    .contact-box {
       background: white;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       margin: 30px 0;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-family: inherit;
-    }
-    button {
-      background: #25d366; /* cor WhatsApp */
-      color: white;
-      font-weight: 700;
-      padding: 14px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1.1rem;
-    }
-    button:hover {
-      background: #128c7e;
-    }
-    .contact {
       text-align: center;
-      background: #000;
-      color: white;
-      padding: 25px;
-      margin-top: 40px;
-      border-radius: 12px;
     }
     .whatsapp-link {
-      color: #25d366;
+      display: inline-block;
+      background: #25D366;
+      color: white;
       font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 8px;
       text-decoration: none;
+      font-size: 1.1rem;
+      margin-top: 16px;
+    }
+    .whatsapp-link:hover {
+      background: #128C7E;
     }
     .footer {
       text-align: center;
@@ -158,27 +139,15 @@
 
     <p>Nosso objetivo é <strong>quebrar o preconceito</strong> sobre inovação vinda da China e mostrar como a <strong>IA (Inteligência Artificial)</strong> já está transformando condomínios com soluções reais, seguras e escaláveis.</p>
 
-    <h2>Quer garantir sua vaga?</h2>
-    <p>Preencha o formulário abaixo. Nossa equipe entrará em contato para explicar detalhes do projeto e da viagem.</p>
+    <h2>👉 Pronto para garantir sua vaga?</h2>
+    <p>Não precisa preencher formulário — basta falar diretamente com o **Roberto Rocha**, responsável pela SEGD’BOA:</p>
 
-    <form action="https://formspree.io/f/mqkowqzl" method="POST">
-      <input type="text" name="nome" placeholder="Seu nome completo *" required />
-      <input type="email" name="email" placeholder="E-mail *" required />
-      <input type="tel" name="telefone" placeholder="WhatsApp (com DDD) *" required />
-      <input type="text" name="condominio" placeholder="Nome do condomínio ou empresa" />
-      <textarea name="mensagem" rows="3" placeholder="Dúvidas ou observações?"></textarea>
-      <button type="submit">👉 QUERO MINHA VAGA NA CHINA</button>
-    </form>
-
-    <div class="contact">
-      <p>📞 <strong>Contato direto:</strong></p>
-      <p>Roberto Rocha<br>
-      <strong>SEGD’BOA</strong></p>
-      <p>
-        <a href="https://wa.me/5511992824150" target="_blank" class="whatsapp-link">
-          📱 WhatsApp: (11) 9 9282-4150
-        </a>
-      </p>
+    <div class="contact-box">
+      <h3>Roberto Rocha | SEGD’BOA</h3>
+      <p>📲 WhatsApp: <strong>(11) 9 9282-4150</strong></p>
+      <a href="https://wa.me/5511992824150" class="whatsapp-link" target="_blank">
+        ✉️ ENVIAR MENSAGEM AGORA
+      </a>
     </div>
 
     <div class="footer">
@@ -186,30 +155,5 @@
       <p>© 2025 SEGD’BOA — Inovação com propósito.</p>
     </div>
   </div>
-
-  <script>
-    // Mensagem de sucesso após envio (opcional)
-    document.querySelector('form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(response => {
-        if (response.ok) {
-          alert('✅ Mensagem enviada com sucesso!\nEm breve o Roberto entrará em contato pelo WhatsApp.');
-          form.reset();
-        } else {
-          alert('⚠️ Ocorreu um erro. Tente novamente ou envie diretamente pelo WhatsApp.');
-        }
-      })
-      .catch(() => {
-        alert('⚠️ Sem conexão. Por favor, envie diretamente pelo WhatsApp do Roberto.');
-      });
-    });
-  </script>
 </body>
 </html>
